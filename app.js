@@ -15,8 +15,13 @@ var printReqLog = function (req, res, next) {
   let date = new Date()
   let day = date.toJSON().split('T')[0]
   let time = date.toJSON().split('T')[1].split('.')[0]
+  let finishDate = new Date()
 
-  console.log(`${day} ${time} | ${req.method} from ${req.url}`)
+  res.on('finish', () => {
+    finishDate = new Date()
+    console.log(`${day} ${time} | ${req.method} from ${req.url} | total time: ${finishDate - date}ms`)
+  })
+
   next()
 }
 
