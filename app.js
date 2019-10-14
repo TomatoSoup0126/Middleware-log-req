@@ -8,6 +8,8 @@ app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
 
 const methodOverride = require('method-override')
+app.use(methodOverride('_method'))
+
 
 var printReqLog = function (req, res, next) {
   let date = new Date()
@@ -20,28 +22,27 @@ var printReqLog = function (req, res, next) {
 
 app.use(printReqLog)
 
-// 列出全部 Todo
+
 app.get('/', (req, res) => {
-  res.render('index')
+  res.render('index', { message: '列出全部 Todo' })
 })
 
-// 新增一筆 Todo 頁面
 app.get('/new', (req, res) => {
-  res.send('新增 Todo 頁面')
+  res.render('index', { message: '新增 Todo 頁面' })
 })
 
-// 顯示一筆 Todo 的詳細內容
+
 app.get('/:id', (req, res) => {
-  res.send('顯示一筆 Todo')
+  res.render('index', { message: '顯示一筆 Todo' })
 })
 
-// 新增一筆  Todo
+
 app.post('/', (req, res) => {
-  res.send('新增一筆  Todo')
+  res.render('index', { message: '新增一筆  Todo' })
 })
 
 app.delete('/:id/delete', (req, res) => {
-  res.send('刪除 Todo')
+  res.render('index', { message: '刪除 Todo' })
 })
 
 app.listen(port, () => {
