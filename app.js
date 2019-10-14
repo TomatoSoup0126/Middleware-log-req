@@ -2,6 +2,17 @@ const express = require('express')
 const app = express()
 const port = 3000
 
+var printReqLog = function (req, res, next) {
+  let date = new Date()
+  let day = date.toJSON().split('T')[0]
+  let time = date.toJSON().split('T')[1].split('.')[0]
+
+  console.log(day + ' ' + time + ' | ' + req.method + ' from ' + req.url)
+  next()
+}
+
+app.use(printReqLog)
+
 // 列出全部 Todo
 app.get('/', (req, res) => {
   res.send('列出全部 Todo')
