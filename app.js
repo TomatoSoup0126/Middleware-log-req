@@ -16,7 +16,7 @@ var printReqLog = function (req, res, next) {
   let day = date.toJSON().split('T')[0]
   let time = date.toJSON().split('T')[1].split('.')[0]
 
-  console.log(day + ' ' + time + ' | ' + req.method + ' from ' + req.url)
+  console.log(`${day} ${time} | ${req.method} from ${req.url}`)
   next()
 }
 
