@@ -7,6 +7,8 @@ const exphbs = require('express-handlebars')
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
 
+const methodOverride = require('method-override')
+
 var printReqLog = function (req, res, next) {
   let date = new Date()
   let day = date.toJSON().split('T')[0]

@@ -1,15 +1,21 @@
-<a class="btn btn-primary" href="/" role="button">GET /</a>
+<div class="container">
+  <div class="d-flex mt-5">
 
-<a class="btn btn-primary" href="/new" role="button">GET /new</a>
+    <a class="btn btn-outline-secondary mr-2" href="/" role="button">GET /</a>
 
-<a class="btn btn-primary" href="/1" role="button">GET /:id</a>
+    <a class="btn btn-outline-secondary mr-2" href="/new" role="button">GET /new</a>
 
-<form action="/" method="POST">
-  <button type="submit" class="btn btn-primary btn-block mt-4">POST /</button>
-</form>
+    <a class="btn btn-outline-secondary mr-2" href="/1" role="button">GET /:id</a>
 
+    <form action="/" method="POST">
+      <button type="submit" class="btn btn-outline-secondary mr-2">POST /</button>
+    </form>
 
-<form action="/records/1/delete?_method=DELETE" method="POST" style="display: inline;">
-  <button type="submit" class="btn btn-outline-danger font-weight-normal">Delete
-  </button>
-</form>
+    <form action="/1/delete?_method=DELETE" method="POST" style="display: inline;">
+      <button type="submit" class="btn btn-outline-secondary mr-2">Delete /:id/delete
+      </button>
+    </form>
+
+  </div>
+
+</div>
