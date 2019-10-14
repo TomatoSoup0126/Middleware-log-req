@@ -9,7 +9,7 @@
 
 - 使用終端機從github clone本專案
    ```
-   $ git clone https://github.com/TomatoSoup0126/Expense_record.git
+   $ git clone https://github.com/TomatoSoup0126/Middleware-log-req.git
    ```
 
 - 移至本專案資料夾中 
