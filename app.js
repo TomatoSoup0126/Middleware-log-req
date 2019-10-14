@@ -2,6 +2,11 @@ const express = require('express')
 const app = express()
 const port = 3000
 
+const exphbs = require('express-handlebars')
+
+app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
+app.set('view engine', 'handlebars')
+
 var printReqLog = function (req, res, next) {
   let date = new Date()
   let day = date.toJSON().split('T')[0]
@@ -15,7 +20,7 @@ app.use(printReqLog)
 
 // 列出全部 Todo
 app.get('/', (req, res) => {
-  res.send('列出全部 Todo')
+  res.render('index')
 })
 
 // 新增一筆 Todo 頁面
